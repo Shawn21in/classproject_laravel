@@ -34,11 +34,30 @@ class Type1Controller extends Controller
 
     public function update(Request $req){
         $type_layer1 = TypeLayer1::find($req->id);
+        
+
+        Session::flash("message",($req->type_layer1_name)."已修改");
         $type_layer1->type_layer1_name = $req->type_layer1_name;
         $type_layer1->save();
-
-        Session::flash("message","已修改");
         return redirect("admin/type1");
     }
 
+    public function delete(Request $req){
+        $temp="";
+        
+        foreach($req->id as $id){
+            $type_layer1 = TypeLayer1::find($id);
+            
+            $temp = $temp . $type_layer1->type_layer1_name.",";
+        }
+        TypeLayer1::destroy($req->id);
+        Session::flash("message",$temp."已刪除");
+        return redirect("/admin/type1");
+    }
+
+    public function search(Request $req){
+        $list = (new TypeLayer1())->search($req->keyword);
+
+        return view("admin.type1.search",compact("list"));
+    }
 }

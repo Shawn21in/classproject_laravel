@@ -15,5 +15,9 @@ class TypeLayer1 extends Model
         "type_layer1_name"
     ];
     
+    public function search($keyword){
+        $list = self::where("type_layer1_name","LIKE","%".$keyword. "%")->get();
+        return $list;
+    }
 
 }

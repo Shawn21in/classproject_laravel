@@ -3,8 +3,8 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <!-- menu-open<-放進去會預先展開 -->
-          <li class="nav-item{{ Request::is('admin/shop/*','admin/product/*') ? 'menu-open' :''}}">
-            <a href="#" class="nav-link {{ Request::is('admin/shop/*','admin/product/*') ? 'active' :''}}">
+          <li class="nav-item{{ Request::is('admin/shop','admin/shop/*','admin/product','admin/product/*') ? 'menu-open' :''}}">
+            <a href="#" class="nav-link {{ Request::is('admin/shop','admin/shop/*','admin/product','admin/product/*') ? 'active' :''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 商品管理

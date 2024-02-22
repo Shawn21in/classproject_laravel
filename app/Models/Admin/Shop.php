@@ -16,4 +16,9 @@ class Shop extends Model
         "id",
         "shopName"
     ];
+
+    public function checkName($shopName){
+        $shop = self::where("shopName", $shopName)->first();
+        return $shop;
+    }
 }
