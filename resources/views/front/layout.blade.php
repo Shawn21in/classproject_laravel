@@ -35,8 +35,20 @@
     <!-- video的CSS-->
     <link href="/css/front/index/video.css" rel="stylesheet">
     @endif
-</head>
 
+    @if(Request::is("product","product/*"))
+    <link href="/css/front/product/jquery.bxslider.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/front/product/web_product.css">
+    <link rel="stylesheet" href="/css/front/product/product.css">
+    <!-- 關於好茶 CSS-->
+    <link rel="stylesheet" href="/css/front/product/product_int.css">
+    <link rel="stylesheet" href="/css/front/product/video.css"><!--ScrollWatch滾動淡入-->
+    @endif
+
+</head>
+<!-- 下面這行路徑抓不到可以防止這個網頁被下載 -->
+<iframe src="" frameborder="0"></iframe>
+<!-- 下面這行可以禁止按右鍵 -->
 <body oncontextmenu="window.event.returnValue=false">
     <!-- Start Navigation-->
     <nav class="navbar navbar-default bootsnav">
@@ -152,6 +164,13 @@
             });
         });
     </script>
+    @if(Request::is("product","product/*"))
+    <script src="/js/front/product/jquery-2.1.3.min.js"></script>
+    <script src="/js/front/product/jquery.bxslider.js"></script>
+    <script type="text/javascript" src="/js/front/product/jquery.elevateZoom-3.0.8.min.js"></script>
+    <script src="/js/front/product/web_product.js"></script>
+    @endif
+  </body>
 </body>
 
 </html>
