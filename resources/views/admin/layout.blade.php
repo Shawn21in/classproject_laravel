@@ -327,6 +327,27 @@
           $(".chk").attr("checked", false);
         }
       });
+      $("#photoall").click(function() {
+        if ($(this).is(":checked")) {
+          $(".photochk").attr("checked", true);
+        } else {
+          $(".photochk").attr("checked", false);
+        }
+      });
+      $("#specall").click(function() {
+        if ($(this).is(":checked")) {
+          $(".specchk").attr("checked", true);
+        } else {
+          $(".specchk").attr("checked", false);
+        }
+      });
+      $("#shopall").click(function() {
+        if ($(this).is(":checked")) {
+          $(".shopchk").attr("checked", true);
+        } else {
+          $(".shopchk").attr("checked", false);
+        }
+      });
     });
   </script>
 </body>

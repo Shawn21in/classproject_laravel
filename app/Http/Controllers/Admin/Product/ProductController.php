@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
+
 class ProductController extends Controller
 {
     public function list(){
@@ -122,4 +123,69 @@ class ProductController extends Controller
         }
     }
 
+    public function edit(Request $req){
+        $product = Product::find($req->id);
+        $shop = (new ProductShop())->getShop($req->id);
+        $photo = (new ProductPhoto())->getPhoto($req->id);
+        $spec = (new ProductSpec())->getSpec($req->id);
+        $type_layer1 = TypeLayer1::get();
+        $shopList = shop::all();
+
+        return view("admin.product.edit",compact("product","shop","photo","spec","type_layer1","shopList"));
+
+    }
+
+    public function update(Request $req){
+        $product = Product::find($req->id);
+        $temp=$product->title;
+        $product->type_layer1 = $req->type_layer1;
+        $product->title = $req->title;
+        $product->sub_title = $req->sub_title;
+        $product->content = $req->product_content;
+        $product->home = $req->home;
+        $product->save();
+
+        Session::flash("message", $temp."已修改為".($req->title));
+        return redirect("/admin/product");
+    }
+
+    public function delete(Request $req){
+        if(!empty($req->id))
+        {
+            foreach($req->id as $id){
+                DB::beginTransaction();
+                try{
+                    //從產品圖列表
+                    $photoList = (new ProductPhoto())->getPhoto($id);
+                    //如果產品圖不是空的,且資料筆數>0
+                    if(!empty($photoList) && sizeof($photoList) >0){
+                        foreach($photoList as $photo){
+                            // 從檔案刪除產品圖
+                            /*
+                            以後做專案,要詢問業主或窗口
+                            當刪除產品時,圖檔是否一併刪除
+                            一旦刪除無法復原,要再三確認
+                            */ 
+                            @unlink("images/product/".$photo->photo);
+                        }
+                        //刪除產品圖
+                        (new ProductPhoto())->deletePhoto($id);
+                    }
+                    (new ProductSpec())->deleteSpec($id);
+                    (new ProductShop())->deleteShop($id);
+                    Product::destroy($id);
+                    DB::commit();
+                }catch(Exception $e){
+                    DB::rollBack();
+                    throw $e;
+                }
+            }
+
+            Session::flash("message","產品已刪除");
+            return redirect("/admin/product");
+        }else{
+            Session::flash("message","請選擇要刪除的產品");
+            return redirect()->back();
+        }
+    }
 }

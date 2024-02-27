@@ -16,4 +16,14 @@ class ProductSpec extends Model
         "product_id",
         "content"
     ];
+
+    public function getSpec($product_id){
+        $list = self::where("product_id",$product_id)->get();
+
+        return $list;
+    }
+
+    public function deleteSpec($product_id){
+        self::where("product_id", $product_id)->delete();
+    }
 }

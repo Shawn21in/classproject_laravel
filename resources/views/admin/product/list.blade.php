@@ -1,5 +1,5 @@
 @extends("admin.layout")
-@section("title", "類別管理")
+@section("title", "產品管理")
 @section("content")
 <script>
     function doSearch(keyword) {

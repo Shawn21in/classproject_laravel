@@ -17,4 +17,14 @@ class ProductPhoto extends Model
         "product_id",
         "photo"
     ];
+
+    public function getPhoto($product_id){
+        $list = self::where("product_id",$product_id)->get();
+
+        return $list;
+    }
+
+    public function deletePhoto($product_id){
+        self::where("product_id",$product_id)->delete();
+    }
 }

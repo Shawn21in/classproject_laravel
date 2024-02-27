@@ -33,4 +33,13 @@ class Product extends Model
 
         return $list;    
     }
+
+    public function getHomeProduct(){
+        $list = DB::select("SELECT id,type_layer1,title,sub_title,content,
+        (SELECT photo From product_photo WHERE product_id = a.id ORDER BY RAND() LIMIT 1) AS photo
+        FROM product a 
+        WHERE home ='Y'");
+
+        return $list;
+    }
 }

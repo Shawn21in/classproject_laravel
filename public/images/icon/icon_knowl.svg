@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px"
+	 height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+<g id="圖層_3">
+</g>
+<g id="圖層_1">
+	<g>
+		<path fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" d="M30,47.736
+			c-3.183-0.01-5.771-0.572-7.895-1.485c0.47,2.173,3.821,3.856,7.896,3.856c4.069,0,7.418-1.681,7.892-3.851
+			C35.77,47.166,33.182,47.727,30,47.736z"/>
+		<path fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" d="M30,32.247
+			c-8.588-0.025-15.782-1.433-17.974-3.347c0.68,1.369,0.005,18.78,17.974,18.836C48,47.681,47.294,30.27,47.974,28.9
+			C45.782,30.814,39,32.222,30,32.247z"/>
+		<path fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" d="M30,32.247
+			c4.868-0.014,9.078-0.435,12.272-1.118C39.477,30.01,35.027,29.281,30,29.281c-4.999,0-9.426,0.72-12.226,1.829
+			C21.045,31.806,25.312,32.233,30,32.247z"/>
+		<path fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" d="M31.313,9.893
+			c-0.574,1.444-1.372,3.162-1.059,4.752c0.249,1.261,1.218,2.215,1.809,3.32c0.947,1.771,1.309,3.878,0.538,5.786
+			c-0.588,1.453-1.978,2.78-3.599,2.92c0.741-1.759,1.018-3.451,0.131-5.22c-0.563-1.127-1.443-2.033-2.056-3.126
+			C25.207,14.989,27.172,10.066,31.313,9.893z"/>
+		<path fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" d="M32.664,23.557
+			c-0.023,0.064-0.037,0.13-0.063,0.194c-0.588,1.453-1.978,2.78-3.599,2.92c0.452-1.072,0.727-2.12,0.675-3.175
+			c-9.776,0.052-17.65,2.438-17.65,5.378c0,0.01,0.005,0.02,0.005,0.03c2.197,1.912,9.387,3.317,17.969,3.343
+			c8.994-0.025,15.772-1.431,17.969-3.343c0-0.011,0.005-0.021,0.005-0.03C47.974,26.173,41.324,23.943,32.664,23.557z"/>
+		<g>
+			<defs>
+				<path id="SVGID_19_" d="M30,32.247c-8.588-0.025-15.782-1.433-17.974-3.347c0.68,1.369,0.005,18.78,17.974,18.836
+					C48,47.681,47.294,30.27,47.974,28.9C45.782,30.814,39,32.222,30,32.247z"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_19_"  overflow="visible"/>
+			</clipPath>
+			<g id="XMLID_55_" clip-path="url(#SVGID_2_)">
+				<path id="XMLID_73_" fill="none" stroke="#808080" stroke-width="0.5" stroke-linejoin="round" stroke-miterlimit="10" d="
+					M49.872,26.506c-3.123,2.344-9.375,4.945-19.706,4.945c-8.563,0-15.733-1.742-18.849-4.664"/>
+				<path fill="none" stroke="#808080" stroke-width="0.6" stroke-linejoin="round" stroke-miterlimit="10" d="M11.571,30.268
+					c3.41,3.505,10.45,5.492,18.554,5.544c9.715,0.06,16.099-2.687,19.229-5.901"/>
+				<path fill="none" stroke="#808080" stroke-width="0.7" stroke-linejoin="round" stroke-miterlimit="10" d="M11.825,33.75
+					c3.705,4.088,10.615,6.32,18.259,6.424c9.1,0.12,15.613-2.772,18.754-6.856"/>
+				<path fill="none" stroke="#808080" stroke-width="0.8" stroke-linejoin="round" stroke-miterlimit="10" d="M12.079,37.23
+					c4,4.672,10.78,7.148,17.964,7.304c8.483,0.181,15.129-2.856,18.277-7.811"/>
+				<path fill="none" stroke="#808080" stroke-width="0.9" stroke-linejoin="round" stroke-miterlimit="10" d="M12.333,40.712
+					c4.296,5.254,10.945,7.976,17.669,8.183c7.868,0.241,14.645-2.941,17.802-8.767"/>
+				<path id="XMLID_72_" fill="none" stroke="#808080" stroke-linejoin="round" stroke-miterlimit="10" d="M12.587,44.193
+					c9.906,12.6,28.799,11.818,34.699-0.658"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="圖層_2">
+</g>
+</svg>
