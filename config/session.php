@@ -34,7 +34,7 @@ return [
     'lifetime' => env('SESSION_LIFETIME', 120),
 
     'expire_on_close' => true,
-    /*網頁關閉後清除session = >true開啟功能*/ 
+    /*網頁關閉後清除session = >true開啟功能(會清空)*/ 
 
     /*
     |--------------------------------------------------------------------------

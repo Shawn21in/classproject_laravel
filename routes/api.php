@@ -1,19 +1,21 @@
 <?php
 
+use App\Http\Controllers\Admin\type\Type1Controller;
+use App\Http\Controllers\Front\HomeContoller;
+use App\Http\Controllers\Front\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+Route::get("/getHomeProduct",[HomeContoller::class, "getHomeProduct"]);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(["prefix" => "product"], function(){
+    // http://127.0.0.1:8000/api/product/getProduct/3 檢查用 id要找資料庫有的
+    Route::get("getProduct/{id}", [ProductController::class, "getProduct"]);
+    Route::get("getPhoto/{product_id}", [ProductController::class, "getPhoto"]);
+    Route::get("getSpec/{product_id}", [ProductController::class, "getSpec"]);
+    Route::get("getShop/{product_id}", [ProductController::class, "getShop"]);
+});
+
+Route::group(["prefix" => "type_layer1"], function(){
+    Route::get("getType_layer1/{id}", [Type1Controller::class, "getType_layer1"]);
 });

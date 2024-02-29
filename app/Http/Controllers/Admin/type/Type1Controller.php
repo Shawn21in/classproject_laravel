@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Session;
 
 class Type1Controller extends Controller
 {
+    public function getType_layer1(Request $req){
+        $list = TypeLayer1::find($req->id);
+        return response()->json($list);
+    }
+
     public function list(){
         $list = TypeLayer1::get();
         return view("admin.type1.list",compact("list"));
@@ -24,6 +29,7 @@ class Type1Controller extends Controller
         $type_layer1->save();
 
         Session::flash("message","已新增");
+        Session::forget("info");// 清除前台使用者存放於middleware的資料
         return redirect("admin/type1");
     }
 
@@ -39,6 +45,7 @@ class Type1Controller extends Controller
         Session::flash("message",($req->type_layer1_name)."已修改");
         $type_layer1->type_layer1_name = $req->type_layer1_name;
         $type_layer1->save();
+        Session::forget("info");// 清除前台使用者存放於middleware的資料
         return redirect("admin/type1");
     }
 
@@ -52,6 +59,7 @@ class Type1Controller extends Controller
         }
         TypeLayer1::destroy($req->id);
         Session::flash("message",$temp."已刪除");
+        Session::forget("info");// 清除前台使用者存放於middleware的資料
         return redirect("/admin/type1");
     }
 

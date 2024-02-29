@@ -24,4 +24,36 @@ class ProductController extends Controller
 
        return view("front.product.detail",compact("type_layer1","product","photo","spec","shop"));
     }
+
+    public function getProduct(Request $req)
+    {
+        $id= $req->id;
+
+        $product = Product::find($id);
+        return response()->json($product);
+    }
+
+    public function getPhoto(Request $req)
+    {
+        $id= $req->product_id;
+
+        $photo = (new ProductPhoto())->getPhoto($id);
+        return response()->json($photo);
+    }
+
+    public function getSpec(Request $req)
+    {
+        $id= $req->product_id;
+
+        $spec = (new ProductSpec())->getSpec($id);
+        return response()->json($spec);
+    }
+
+    public function getShop(Request $req)
+    {
+        $id= $req->product_id;
+
+        $shop = (new ProductShop())->getShop($id);
+        return response()->json($shop);
+    }
 }

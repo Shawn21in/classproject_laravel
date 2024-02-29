@@ -70,8 +70,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-
+    'timezone' => 'Asia/Taipei',
+    // 實務上會直接設定台北,不會寫UTC+8
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration

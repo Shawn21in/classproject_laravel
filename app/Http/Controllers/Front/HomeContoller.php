@@ -10,8 +10,15 @@ class HomeContoller extends Controller
 {
     public function index()
     {
-    $product = (new Product())->getHomeProduct();
+        $product = (new Product())->getHomeProduct();
 
-    return view("front.home", compact("product"));
+        return view("front.home", compact("product"));
+    }
+
+    public function getHomeProduct()
+    {
+        $product = (new Product())->getHomeProduct();
+
+        return response()->json($product);
     }
 }

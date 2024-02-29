@@ -66,6 +66,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         //註冊仲介程式，現在版本寫法2024/2/17
         'manager' => \App\Http\Middleware\CheckManager::class,
+        'info' => \App\Http\Middleware\Info::class,
     ];
 
     // protected $routeMiddleware = [ //舊版寫法

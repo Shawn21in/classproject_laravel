@@ -89,11 +89,13 @@
                         <img src="/images/i-con/icon_product.svg" alt=""></span>
                             <p class="nav_p">好茶</p>
                         </a>
+                        @if(!empty(session()->get("type_layer1")))
                         <ul class="dropdown-menu">
-                            <li><a href="productlist_1.html">四角茶包</a></li>
-                            <li><a href="productlist_2.html">原葉茶包</a></li>
-                            <li><a href="productlist_3.html">嚴選茶葉</a></li>
+                            @foreach(session()->get("type_layer1") as $data)
+                            <li><a href="/product/{{ $data->id }}">{{ "$data->type_layer1_name	" }}</a></li>
+                            @endforeach
                         </ul>
+                        @endif
                     </li>
                     <li><a href="knowl.html"><span class="nav_img">
                         <img src="/images/i-con/icon_knowl.svg" alt=""></span>
