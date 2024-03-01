@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Product;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Product\ProductPhoto;
+use App\Models\Admin\Product\Resize;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -21,7 +22,9 @@ class PhotoController extends Controller
         $times = explode(" ", microtime());
         $photoName = strftime("%Y_%m_%d_%H_%M_%S_", $times[1]) . substr($times[0], 2, 3) . "." . $photo->extension();
         $photo->move("images/product", $photoName);
-
+        $path = "images/product/";
+        new Resize($path . "M/" . $photoName, $path . $photoName, 490, 490, '0', '0');
+        new Resize($path . "S/" . $photoName, $path . $photoName, 80, 80, '0', '0');
         $fs = new ProductPhoto();
         $fs->product_id = $req->product_id;
         $fs->photo = $photoName;
@@ -38,6 +41,8 @@ class PhotoController extends Controller
                 $photo = ProductPhoto::find($data);
                 $product_id = $photo->product_id;
                 @unlink("images/product/" . $photo->photo);
+                @unlink("images/product/M" . $photo->photo);
+                @unlink("images/product/S" . $photo->photo);
                 $photo->delete();
             }
 

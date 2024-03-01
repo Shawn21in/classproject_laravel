@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminController;
-
+require __DIR__."/banner.php";
 require __DIR__."/type1.php";
 require __DIR__."/product.php";
 require __DIR__."/shop.php";

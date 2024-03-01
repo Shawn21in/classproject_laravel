@@ -9,12 +9,12 @@
     <div class="main_info">
         <div class="main_pic">
             @if(!empty($photo) && sizeof($photo) >0 )
-            <div class="m_pic"><img id="zoom_03" src="/images/product/{{ $photo[0]->photo }}" data-zoom-image="/images/product/{{ $photo[0]->photo }}"></div>
+            <div class="m_pic"><img id="zoom_03" src="/images/product/M/{{ $photo[0]->photo }}" data-zoom-image="/images/product/{{ $photo[0]->photo }}"></div>
             <div id="thumb_pic">
                 <ul id="gallery_01">
                     @foreach($photo as $data)
                     <li>
-                        <a href="#" data-image="/images/product/{{ $data->photo }}" data-zoom-image="/images/product/{{ $data->photo }}"><img id="zoom_03" src="/images/product/{{ $data->photo }}">
+                        <a href="#" data-image="/images/product/M/{{ $data->photo }}" data-zoom-image="/images/product/{{ $data->photo }}"><img id="zoom_03" src="/images/product/S/{{ $data->photo }}">
                         </a>
                     </li>
                     @endforeach

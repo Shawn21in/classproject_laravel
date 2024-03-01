@@ -36,6 +36,15 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/banner" class="nav-link{{ Request::is('admin/banner/*', 'admin/banner')? ' active' :''}}">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                banner管理
+                <span class="right badge badge-danger">New</span>
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>

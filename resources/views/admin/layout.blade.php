@@ -36,8 +36,8 @@
 
 
 </head>
-
-<body class="hold-transition sidebar-mini layout-fixed">
+<!-- class="hold-transition sidebar-mini layout-fixed" -->
+<body>
   <script>
     @if(Session::has("message"))
     Swal.fire("{{ Session::get('message') }}");

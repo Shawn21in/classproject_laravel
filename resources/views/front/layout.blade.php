@@ -36,7 +36,7 @@
     <link href="/css/front/index/video.css" rel="stylesheet">
     @endif
 
-    @if(Request::is("product","product/*"))
+    @if(Request::is("product","product/detail/*"))
     <link href="/css/front/product/jquery.bxslider.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/front/product/web_product.css">
     <link rel="stylesheet" href="/css/front/product/product.css">
@@ -44,12 +44,28 @@
     <link rel="stylesheet" href="/css/front/product/product_int.css">
     <link rel="stylesheet" href="/css/front/product/video.css"><!--ScrollWatch滾動淡入-->
     @endif
+    
+    
+    @if(Request::is("product/list/*"))
+    <link href="/css/front/product/effects.min.css" rel="stylesheet">
+    <link href="/css/front/product/style.css" rel="stylesheet"><!--ScrollWatch滾動淡入-->
+    @endif
+    <style>
+      .fade_in {
+      /* opacity: 0; *//*這是透明度*/
+      transition: opacity 2s;
+      }
+      .fade_in.scroll-watch-in-view {
+      opacity: 1;
+      }
+    </style>
 
 </head>
 <!-- 下面這行路徑抓不到可以防止這個網頁被下載 -->
 <iframe src="" frameborder="0"></iframe>
 <!-- 下面這行可以禁止按右鍵 -->
-<body oncontextmenu="window.event.returnValue=false">
+<!-- oncontextmenu="window.event.returnValue=false" -->
+<body >
     <!-- Start Navigation-->
     <nav class="navbar navbar-default bootsnav">
         <!-- Start Top Search-->
@@ -92,7 +108,7 @@
                         @if(!empty(session()->get("type_layer1")))
                         <ul class="dropdown-menu">
                             @foreach(session()->get("type_layer1") as $data)
-                            <li><a href="/product/{{ $data->id }}">{{ "$data->type_layer1_name	" }}</a></li>
+                            <li><a href="/product/list/{{ $data->id }}">{{ "$data->type_layer1_name	" }}</a></li>
                             @endforeach
                         </ul>
                         @endif
@@ -166,11 +182,23 @@
             });
         });
     </script>
-    @if(Request::is("product","product/*"))
+    @if(Request::is("product","product/detail/*"))
     <script src="/js/front/product/jquery-2.1.3.min.js"></script>
     <script src="/js/front/product/jquery.bxslider.js"></script>
     <script type="text/javascript" src="/js/front/product/jquery.elevateZoom-3.0.8.min.js"></script>
     <script src="/js/front/product/web_product.js"></script>
+    @endif
+
+    @if(Request::is("product/type_layer1/*"))
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="product/productlist/js/jquery.lazyload.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(function () {
+      $("img").lazyload({
+      effect: "fadeIn"
+      });
+      });
+    </script>
     @endif
   </body>
 </body>

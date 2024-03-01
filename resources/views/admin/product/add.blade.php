@@ -19,6 +19,7 @@
                 <li><a href="#tabs-2">產品圖</a></li>
                 <li><a href="#tabs-3">規格</a></li>
                 <li><a href="#tabs-4">商店</a></li>
+                <li><a href="#tabs-5">商品內容</a></li>
             </ul>
             <div id="tabs-1">
                 <div class="row">
@@ -75,6 +76,9 @@
                     {{ $data->shopName }}
                     <div>網址: <input type="text" class="form-control" name="url{{ $data->id }}"></div>
                 @endforeach
+            </div>
+            <div id="tabs-5">
+                @include("admin.product.addContent");
             </div>
 
         </div>

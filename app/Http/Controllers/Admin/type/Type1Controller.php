@@ -14,6 +14,11 @@ class Type1Controller extends Controller
         return response()->json($list);
     }
 
+    public function getFrontType_layer1(){
+        $list = TypeLayer1::all();
+        return response()->json($list);
+    }
+
     public function list(){
         $list = TypeLayer1::get();
         return view("admin.type1.list",compact("list"));

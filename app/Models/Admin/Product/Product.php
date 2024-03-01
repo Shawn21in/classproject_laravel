@@ -42,4 +42,13 @@ class Product extends Model
 
         return $list;
     }
+
+    public function getType_layer1Product($type_layer1){
+        $list = DB::select("SELECT id,type_layer1,title,sub_title,content,
+        (SELECT photo From product_photo WHERE product_id = a.id ORDER BY RAND() LIMIT 1) AS photo
+        FROM product a 
+        WHERE type_layer1 = ?",[$type_layer1]);
+
+        return $list;
+    }
 }
